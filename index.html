@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>B3 Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      font-family: 'Arial Black', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .logo {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-size: 3em;
+      line-height: 1.3;
+    }
+
+    .clock {
+      margin-top: 40px;
+      font-size: 2em;
+      font-style: italic;
+      font-weight: bold;
+      text-shadow: 2px 2px #000;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Replaced logo (animated) -->
+    <img src="https://cdn.discordapp.com/attachments/1077540029762633750/1398314716329152643/a_e1e902c02e3389f2e1fe3a028f36ad93.gif?ex=6884e98f&is=6883980f&hm=10d89d7568dbbdc9045f4fadd4a45f774306e8829e968cdd050a6b933c1ab39b&" alt="B3 Logo" class="logo">
+    
+    <!-- Title Text -->
+    <div class="title">
+      B3 Dashboard<br>
+      Made BY SPY
+    </div>
+
+    <!-- Dynamic Time -->
+    <div class="clock" id="clock">--:--</div>
+  </div>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      let h = now.getHours().toString().padStart(2, '0');
+      let m = now.getMinutes().toString().padStart(2, '0');
+      document.getElementById('clock').textContent = `${h}:${m}`;
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime(); // Initial call
+  </script>
+</body>
+</html>
