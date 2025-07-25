@@ -20,9 +20,27 @@
       text-align: center;
     }
 
+    /* Logo default state */
     .logo {
       width: 150px;
       margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    /* Red glow ONLY on hover */
+    .logo:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px red) drop-shadow(0 0 20px red);
+    }
+
+    /* Text hover glow remains white */
+    .hover-animate {
+      transition: all 0.4s ease;
+    }
+
+    .hover-animate:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px white) drop-shadow(0 0 20px white);
     }
 
     .title {
@@ -38,21 +56,59 @@
       text-shadow: 2px 2px #000;
       letter-spacing: 2px;
     }
+
+    .discord-button {
+      margin-top: 30px;
+      background-color: #5865F2;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      color: white;
+      font-size: 1.2em;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px transparent;
+    }
+
+    .discord-button:hover {
+      transform: scale(1.07);
+      background-color: #4752c4;
+      box-shadow: 0 0 15px #5865F2, 0 0 25px #5865F2;
+    }
+
+    .discord-logo {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Replaced logo (animated) -->
-    <img src="https://cdn.discordapp.com/attachments/1077540029762633750/1398314716329152643/a_e1e902c02e3389f2e1fe3a028f36ad93.gif?ex=6884e98f&is=6883980f&hm=10d89d7568dbbdc9045f4fadd4a45f774306e8829e968cdd050a6b933c1ab39b&" alt="B3 Logo" class="logo">
-    
-    <!-- Title Text -->
-    <div class="title">
+    <!-- Logo: red glow only on hover -->
+    <img 
+      src="https://cdn.discordapp.com/attachments/1077540029762633750/1398314716329152643/a_e1e902c02e3389f2e1fe3a028f36ad93.gif?ex=6884e98f&is=6883980f&hm=10d89d7568dbbdc9045f4fadd4a45f774306e8829e968cdd050a6b933c1ab39b" 
+      alt="B3 Logo" 
+      class="logo">
+
+    <!-- Title text -->
+    <div class="title hover-animate">
       B3 Dashboard<br>
       Made BY SPY
     </div>
 
-    <!-- Dynamic Time -->
-    <div class="clock" id="clock">--:--</div>
+    <!-- Discord Button -->
+    <a href="https://discord.gg/b3a" class="discord-button" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/discord.svg" alt="Discord" class="discord-logo">
+      Discord
+    </a>
+
+    <!-- Clock -->
+    <div class="clock hover-animate" id="clock">--:--</div>
   </div>
 
   <script>
